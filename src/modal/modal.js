@@ -179,7 +179,7 @@ angular.module('mgcrea.ngStrap.modal', ['mgcrea.ngStrap.helpers.dimensions'])
           }
 
           // Bind events
-          if(options.backdrop) {
+          if(options.backdrop && options.backdrop !== 'static') {
             modalElement.on('click', hideOnBackdropClick);
             backdropElement.on('click', hideOnBackdropClick);
             backdropElement.on('wheel', preventEventDefault);
@@ -211,7 +211,7 @@ angular.module('mgcrea.ngStrap.modal', ['mgcrea.ngStrap.helpers.dimensions'])
           safeDigest(scope);
 
           // Unbind events
-          if(options.backdrop) {
+          if(options.backdrop && options.backdrop !== 'static') {
             modalElement.off('click', hideOnBackdropClick);
             backdropElement.off('click', hideOnBackdropClick);
             backdropElement.off('wheel', preventEventDefault);
